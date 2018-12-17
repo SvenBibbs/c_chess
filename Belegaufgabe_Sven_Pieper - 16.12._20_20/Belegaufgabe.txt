@@ -1,0 +1,126 @@
+Liebe Studierende,
+
+hier die Aufgabenstellung zum Beleg im Modul Programmierung I. Der Beleg 
+ist zum 4.2.2017 abzugeben. Zur Abgabe gehört der Projektordner mit dem 
+Quellcode und ein Kundenordner mit der exe-Datei und ggf. weiteren 
+Textdateien. Beides ist zusammen in einem ZIP-Archivfile auf eine 
+Hochschul-URL (Laufwerk z:, Ordner public_html) zu speichern. Diese 
+Hochschul-URL senden Sie bitte mit "Wunschnote" via Mail an mich. Bei 
+Nichteinhaltung des Termins erfolgt laut Prüfungsordnung eine Bewertung 
+mit 5ue. Die Belegnote geht zu 30% in die Endnote ein. Sie können 
+Zusatzpunkte für die Prüfung erwerben (siehe unten).
+
+Bitte lassen Sie sich von der Aufgabenstellung nicht abschrecken. Die 
+Aufgabe ist einfacher, als es Ihnen derzeit scheint ;-)
+
+Viele Grüße
+Kai Bruns
+
+*************************************************************
+
+
+
+Belegaufgabe - Schach
+
+
+Schreiben Sie ein Programm, mit dessen Hilfe der Nutzer Spielzustände 
+aus Textdateien laden, anzeigen, spielen und wieder in eine Datei 
+schreiben kann. Hierzu ist eine geeignete Benutzerführung zu entwerfen 
+und zu implementieren.
+
+
+"Spielen" bedeutet hier, dass gültige Züge eingegeben werden können, die 
+(auf Gültigkeit) geprüft und dann angezeigt werden. Welche Züge gültig 
+sind, ist auf https://de.wikipedia.org/wiki/Schach#Spielregeln 
+beschrieben und lässt sich leicht testen, wenn Sie eine entsprechende 
+Datenstruktur (z.B. char schachbrett[8][8]) mit dem aktuellen Spielstand 
+anlegen. Die Spielzüge "Rochade" und "en passant"-Schlagen müssen nicht 
+implementiert werden.
+
+Schreiben Sie ein Programm, mit dessen Hilfe der Nutzer Spielzustände 
+aus Textdateien laden, anzeigen, editieren und wieder in eine Datei 
+schreiben kann. Hierzu ist eine geeignete Benutzerführung (mit 
+DAU-sicheren Menüs) zu entwerfen und zu implementieren.  Die Eingabe 
+eines Spielzuges erfolgt über die Tastatur mit 4 Zeichen. So bedeutet 
+z.B. "c1a3" einen Zug der Figur auf dem Feld c1 zum Feld a3.
+
+Die Darstellung/Ausgabe (Visualisierung) erfolgt sehr einfach auf der
+Konsole, zum Beispiel:
+
+
+            a     b     c     d     e     f     g     h
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |  T. |  S. |  L. |  K. |  D. |  L. |  S. |  T. |   8
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |  b. |  b. |  b. |  b. |  b. |  b. |  b. |  b. |   7
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |     |     |     |     |     |     |     |     |   6
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |     |     |     |     |     |     |     |     |   5
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |     |     |     |     |     |     |     |     |   4
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |     |     |     |     |     |     |     |     |   3
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |  b  |  b  |  b  |  b  |  b  |  b  |  b  |  b  |   2
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+         |     |     |     |     |     |     |     |     |
+         |  T  |  S  |  L  |  K  |  D  |  L  |  S  |  T  |   1
+         |     |     |     |     |     |     |     |     |
+         +-----------------------------------------------+
+            a     b     c     d     e     f     g     h
+
+         >>> nächster Zug: b2b4
+
+Zum Unterscheiden von schwarzen und weißen Figuren gibt es mehrere
+Möglichkeiten:
+     - Anhängen eines Punktes an das Zeichen der schwarzen
+       Spielfiguren (siehe oben).
+     - Großbuchstaben für schwarz und Kleinbuchstaben für weiß.
+     - ...
+
+Funktionen zum Positionieren des Cursors und zum Löschen des Bildschirms
+finden Sie im Skripteordner.
+
+Note 3:
+   - Die oben genannte Funktionalität ist korrekt implementiert.
+   - Es wird nur getestet, ob sich die Spieler (schwarz, weiß) bei der
+     Eingabe abwechseln, und ob auf den Startfeld eine Figur entsprechender
+        Farbe steht, die gezogen werden kann.
+   - Das Ziel des Spielzuges muss innerhalb des Spielfelds liegen.
+
+Note 2:
+   - Es sind alle Anforderungen für Note 3 implementiert.
+   - Zusätzlich gibt es eine "Undo-Funktionalität" mit der die
+     Nutzereingaben der aktuellen Sitzung schrittweise rückgängig
+        gemacht werden können.
+        
+Note 1:
+   - Es sind alle Anforderungen für die Note 2 implementiert.
+   - Es wird getestet, ob es sich um einen gültigen Zug im Sinne
+     der Schachregeln (siehe oben) handelt.
+
+
+Note 1 (mit bis zu 10 Zusatzpunkten für die Prüfung)
+   - Das Spiel arbeitet als CGI-Skript mit einer geeigneten
+     HTML-Nutzerführung und grafischer Ausgabe.
+
+
+
+Viel Freude an dieser Aufgabe! Nehmen Sie sich diese Aufgabenstellung 
+ruhig als Ausrede dafür, nur noch an den erfreulichen, erholsamen und
+entspannenden Teilen des Weihnachtsfests teilnehmen zu müssen ;-)
